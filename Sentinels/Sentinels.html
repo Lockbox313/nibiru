@@ -1,0 +1,246 @@
+<!-- Sentinels 0.1 -->
+<!-- Base: Nibiru Charactersheet developed by EtoileLion and Kujio -->
+<!-- Originally developed on behalf of Tablestory.tv -->
+
+<div class="bgwrapper">
+	<input type="hidden" name="attr_sheettype" value="player" class="stype">
+	<div class="player">
+		<div class="header">
+		</div>
+		
+		
+		<div class="name-hab-grid">
+		    <!-- TOP BLANKS -->
+			<div class="name">
+				<input type="text" name="attr_character_name">
+				<label data-i18n="name">Name</label>
+			</div>			
+			<div class="habitat">			
+				<input type="text" name="attr_habitat">			
+				<label for="attr_habitat" data-i18n="habitat">Habitat</label>				
+			</div>
+		</div>
+		
+		
+			<div class="3colrow center spacertop">
+			    <!-- ROLL BUTTONS -->
+			<div class="col">
+				<button class='rollbuttons' type="roll" value="!nibroll @{character_name}|@{gravity}|?{Dice Pool Modifier|0}" name="roll_NormalRoll" data-i18n="normal">Normal </button>
+			</div>
+			
+			<div class="col">
+				<button class='rollbuttons' type="roll" value="!nibcroll @{character_name}|@{gravity}|?{Dice Pool Modifier|0}" name="roll_ContestedRoll" data-i18n="contested">Contested</button>				
+			</div>
+			
+			
+		<div class="maintable">
+		    <!-- MAIN RADIO BUTTONS-->
+			<div class="flex">
+				<p data-i18n="memorypoints">Memory Points</p>
+				<div>			
+				<input type="hidden" name="attr_memorypoints" value="0" class="track">
+				<label class="emptybox"><input type="radio" name="attr_memorypoints" class="hide" value="0"></label>				
+				<label class="123456789"><input type="radio" class="hide" value="1" name="attr_memorypoints"></label>
+				<label class="23456789"><input type="radio" class="hide" value="2" name="attr_memorypoints"></label>
+				<label class="3456789"><input type="radio" class="hide" value="3" name="attr_memorypoints"></label>
+				<label class="456789"><input type="radio" class="hide" value="4" name="attr_memorypoints"></label>				
+				<label class="56789"><input type="radio" class="hide" value="5" name="attr_memorypoints"></label>
+				<label class="6789"><input type="radio" class="hide" value="6" name="attr_memorypoints"></label>
+				<label class="789"><input type="radio" class="hide" value="7" name="attr_memorypoints"></label>
+				<label class="89"><input type="radio" class="hide" value="8" name="attr_memorypoints"></label>
+				<label class="9"><input type="radio" class="hide" value="9" name="attr_memorypoints"></label>
+				</div>
+			</div>
+			
+			<div class="flex">
+				<p data-i18n="influencepoints">Influence Points</p>
+				<div>
+				<input type="hidden" name="attr_influencepoints" value="0" class="track">
+				<label class="emptybox"><input type="radio" name="attr_influencepoints" class="hide" value="0"></label>
+				<label class="123456"><input type="radio" class="hide" value="1" name="attr_influencepoints"></label>
+				<label class="23456"><input type="radio" class="hide" value="2" name="attr_influencepoints"></label>
+				<label class="3456"><input type="radio" class="hide" value="3" name="attr_influencepoints"></label>
+				<label class="456"><input type="radio" class="hide" value="4" name="attr_influencepoints"></label>				
+				<label class="56"><input type="radio" class="hide" value="5" name="attr_influencepoints"></label>
+				<label class="6"><input type="radio" class="hide" value="6" name="attr_influencepoints"></label>
+				</div>
+			</div>			
+		</div>
+		
+		</div>
+
+	
+	<div class="2colrow center spacertop">
+	    <!-- BOTTOM COLUMNS -->
+		<div class="col">
+		<p class="headertext" data-i18n="belongings">Belongings</p>
+		<fieldset class="repeating_belongings">
+			<input type="text" name="attr_belonging" class="fullwidth bold">
+		</fieldset>
+		</div>
+		<div class="col">
+			<p class="headertext" data-i18n="skills">Skills</p>
+			<fieldset class="repeating_skills">
+				<div class="fullwidth flexcontainer">
+				<input type="number" name="attr_skillboost" class="bold skillnum" min="-3" max="3" value="0"> <span class="text" data-i18n="to">to</span>
+				<input type="text" name="attr_skill" class="flex bold">
+				</div>
+			</fieldset>
+		</div>
+		
+	</div>
+	
+	
+	
+	<!-- ---------- J O U R N A L ---------- -->
+	
+	
+	<div class="row center spacertop">			
+		<p class="jhead" data-i18n="thejournal">The Journal</p>
+	</div>
+	
+	<div class="row center">
+		<button type="roll" class='addbutton rollbuttons' value="!addpage @{character_id}" name="roll_addPage" data-i18n="addpage">Add Journal Page</button>
+	</div>
+
+	
+	
+	<div class="journal">
+		<div class="journalheader"></div>
+		<div class="2colrow">
+			<div class='col'>
+				<div class="memory">
+					<p class='noline' data-i18n="remember">I Remember...</p>
+					<textarea name="attr_memory1"></textarea>
+					<p class='noline smaller' data-i18n="effect">Effect: </p>
+					<input type="number" name="attr_memory1boost" class="bold skillnum" min="-3" max="3" value="0"> <span class="text" data-i18n="to">to</span>
+					<input type="text" name="attr_memory1skill" class="flex bold">
+				</div>
+			
+			</div>
+		</div>
+		
+	</div>
+
+
+	<!-- ---------- R O L L S ---------- -->
+	
+
+<rolltemplate class="sheet-rolltemplate-nibirunormal">
+	<table class='sheet-rolltemplate-normal'>
+		
+			<tr>
+			<td class='sheet-rolltemplate-nameline'>
+			  {{name}}
+			</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='sheet-rolltemplate-rollline' data-i18n="normalroll">
+			  Normal Roll
+			</td>
+		</tr>				
+	
+	
+		<tr>
+			<td class='sheet-rolltemplate-dieline'>
+			  {{dierow}}
+			</td>
+		</tr>
+	
+	
+		<tr>
+			<td class='rolltemplate-resultline'>
+			{{#rollTotal() fours 1}}
+				<span class='rolltemplate-resultpass' data-i18n="success">Success!</span>
+			{{/rollTotal() fours 1}}
+			{{#rollTotal() fours 2}}
+				<span class='rolltemplate-resultpass' data-i18n="savvysuccess">Savvy Success</span>
+			{{/rollTotal() fours 2}}
+			{{#rollGreater() fours 2}}
+				<span class='rolltemplate-resultpass' data-i18n="criticalsuccess">Critical Success</span><br>
+				<span class='rolltemplate-ruleofthrees' data-i18n="ruleofthrees">Rule of Threes</span>
+			{{/rollGreater() fours 2}}
+			{{#rollTotal() fours 0}}
+				{{#rollTotal() ones 0}}
+				<span class='rolltemplate-resultneutral' data-i18n="fail">Fail!</span>
+				{{/rollTotal() ones 0}}
+				{{#rollTotal() ones 1}}
+				<span class='rolltemplate-resultfail' data-i18n="fumble">Fumble</span>
+				{{/rollTotal() ones 1}}
+				{{#rollTotal() ones 2}}
+				<span class='rolltemplate-resultfail' data-i18n="majorfail">Major Failure</span>
+				{{/rollTotal() ones 2}}
+				{{#rollGreater() ones 2}}
+				<span class='rolltemplate-resultfail' data-i18n="criticalfail">Critical Failure</span><br>
+				<span class='rolltemplate-ruleofthrees' data-i18n="ruleofthrees">Rule of Threes</span>
+				{{/rollGreater() ones 2}}
+			{{/rollTotal() fours 0}}
+			</td>
+		</tr>
+
+	</table>
+</rolltemplate>
+
+
+<rolltemplate class="sheet-rolltemplate-nibirucontest">
+	<table class='sheet-rolltemplate-normal'>
+		
+			<tr>
+			<td class='sheet-rolltemplate-nameline'>
+			  {{name}}
+			</td>
+		</tr>
+		
+		
+			<tr>
+			<td class='sheet-rolltemplate-rollline' data-i18n="contestedroll">
+			  Contested Roll
+			</td>
+		</tr>		
+	
+	
+	
+		<tr>
+			<td class='sheet-rolltemplate-dieline'>
+			  {{dierow}}
+			</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='rolltemplate-resultline'>
+				{{total}}
+			</td>
+		</tr>
+		{{#ruleofthrees}}
+	
+	
+		<tr>
+			<td class='rolltemplate-resultline'>
+				<span class='rolltemplate-ruleofthrees' data-i18n="ruleofthrees">Rule of Threes</span>
+			</td>
+		</tr>		
+		{{/ruleofthrees}}
+
+	</table>
+</rolltemplate>
+
+
+
+<rolltemplate class="sheet-rolltemplate-quote">
+	<table>
+			<tr>
+			<td class='sheet-rolltemplate-quoteline'>
+			  {{quote}}
+			</td>
+		</tr>
+		{{#by}}
+		<tr>
+			<td class='sheet-rolltemplate-byline'>
+			  {{by}}
+			</td>
+		</tr>
+		{{/by}}
+</rolltemplate>
